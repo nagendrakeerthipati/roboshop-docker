@@ -1,4 +1,4 @@
-FROM 20.20.0-alpine
+FROM node:20-alpine
 WORKDIR /opt/server
 COPY package.json /opt/server
 COPY *.js .
