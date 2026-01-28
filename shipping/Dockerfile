@@ -1,8 +1,7 @@
-FROM maven AS builder
+FROM maven
 WORKDIR /opt/server
 COPY pom.xml .
 COPY src /opt/server/src
-COPY db  /opt/server/db 
 RUN mvn clean package
 RUN mv /opt/server/target/shipping-1.0.jar  /opt/server/shipping.jar
 ENV CART_ENDPOINT="cart:8080" \
